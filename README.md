@@ -4,6 +4,12 @@ Hello everyone, we are a group of 5 members cloning a website 'https://www.bitri
 
 ### Features
 
+- Smooth experience on login page.
+- Wel designed home page.
+- Dashboard with good looking UI.
+- Add and remove task with different functionalities.
+- Know about comapany structure.
+
 
 ### Tech Stack
 
@@ -29,7 +35,6 @@ In this project we used following tech stacks:-
 ### Feedback
 
 If you have any feedback or queries, please reach out to us at pardeshiharshal90@gmail.com.
-
 
 
 # Getting Started with Create React App
