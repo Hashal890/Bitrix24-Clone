@@ -14,6 +14,7 @@ In this project we used following tech stacks:-
 - [ReactJS](https://reactjs.org/)
 - [Redux](https://redux.js.org/)
 - [Chakra-UI](https://chakra-ui.com/)
+- [MongoDB](https://www.mongodb.com/)
 
 
 ### Connect with authors
