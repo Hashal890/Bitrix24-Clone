@@ -18,10 +18,10 @@ In this project we used following tech stacks:-
 
 ### Connect with authors
 
-- [Harshal Pardeshi](https://www.linkedin.com/in/harshalpardeshi/),
-- [Manish Faujdar](),
-- [Janaki Kangalgouda](),
-- [Vishal Mahale](),
+- [Harshal Pardeshi](https://www.linkedin.com/in/harshalpardeshi/)
+- [Manish Faujdar]()
+- [Janaki Kangalgouda]()
+- [Vishal Mahale]()
 - [Rahul Pawar]()
 
 
