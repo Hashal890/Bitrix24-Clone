@@ -26,10 +26,10 @@ In this project we used following tech stacks:-
 ### Connect with authors
 
 - [Harshal Pardeshi](https://www.linkedin.com/in/harshalpardeshi/)
-- [Manish Faujdar]()
-- [Janaki Kangalgouda]()
-- [Vishal Mahale]()
-- [Rahul Pawar]()
+- [Manish Faujdar](https://www.linkedin.com/in/manish-faujdar-b485b2172/)
+- [Janaki Kangalgouda](https://www.linkedin.com/in/janaki-kangalgouda-809936169/)
+- [Vishal Mahale](https://www.linkedin.com/in/vishal-mahale-87688a192/)
+- [Rahul Pawar](https://www.linkedin.com/in/rahul-pawar-8138641a7/)
 
 
 ### Feedback
