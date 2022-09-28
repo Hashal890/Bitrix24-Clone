@@ -1,0 +1,7 @@
+.dashboard-container{
+    height: 100%;
+    background-image: url("https://b24-zu0uxk.bitrix24.in/bitrix/templates/bitrix24/themes/light/atmosphere/atmosphere2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+}
