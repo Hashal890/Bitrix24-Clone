@@ -1,9 +1,10 @@
 import "./App.css";
+import Login from "./Routes/Login";
 
 function App() {
   return (
     <div className="App">
-      <h1>Welcome to Betrix24 Clone</h1>
+     <Login/>
     </div>
   );
 }

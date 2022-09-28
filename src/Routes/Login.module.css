@@ -1,0 +1,118 @@
+.fxstk{
+    position: fixed;
+    background-color: "#53dffa";
+}
+
+.tx1{
+    font-family:
+Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-style:
+normal;
+font-weight:
+500;
+font-size:
+38px;
+line-height:
+42px;
+color: 
+#ffffff;
+text-align: left;
+}
+
+.tx2{
+    font-family:
+Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-style:
+normal;
+font-weight:
+400;
+font-size:
+25px;
+line-height:
+32px;
+color: 
+#ffffff;
+text-align: left;
+}
+
+.a{
+    font-family:
+    Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-style:
+    normal;
+    font-weight:
+    400;
+    font-size:
+    15px;
+    line-height:
+    19px;
+    color: 
+    #ffffff;
+
+}
+
+.txhd{
+    font-family: 
+Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-style: 
+normal;
+font-weight: 
+500;
+font-size: 
+31px;
+line-height: 
+39px;
+Color:
+#333333;
+text-align: left;
+margin-top: 100px;
+margin-bottom: 30px;
+}
+
+.txl1{
+    font-family: 
+Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-style: 
+normal;
+font-weight: 
+400;
+font-size: 
+16px;
+line-height: 
+20px;
+Color:
+#777d86;
+}
+
+.txlevel{
+    font-family: 
+Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-style: 
+normal;
+font-weight: 
+400;
+font-size: 
+20px;
+line-height: 
+26px;
+Color:
+#525c69;
+text-align: left;
+}
+
+.txl2{
+    font-family: 
+Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-style: 
+normal;
+font-weight: 
+400;
+font-size: 
+13px;
+line-height: 
+17px;
+
+Color:
+rgba(82, 92, 105, 0.87);
+text-align: left;
+}
