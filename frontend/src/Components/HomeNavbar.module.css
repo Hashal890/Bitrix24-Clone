@@ -1,0 +1,64 @@
+.nav {
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background-color: white;
+}
+
+.link {
+    font-family:
+        Montserrat, "Helvetica Neue", Verdana, "Helvetica CY", "Nimbus Sans L", sans-serif;
+    font-style:
+        normal;
+    font-weight:
+        600;
+    font-size:
+        13px;
+    line-height:
+        13px;
+}
+
+.link:hover {
+    color: #3fc0f0;
+}
+
+.unstyled {
+
+    font-family:
+        Montserrat, "Helvetica Neue", Verdana, "Helvetica CY", "Nimbus Sans L", sans-serif;
+    font-style:
+        normal;
+    font-weight:
+        400;
+    font-size:
+        12px;
+    line-height:
+        22px;
+        
+Color:
+#262626
+
+}
+
+.btnsld{
+    font-family:
+    Montserrat, "Helvetica Neue", Verdana, "Helvetica CY", "Nimbus Sans L", sans-serif;
+font-style:
+    normal;
+font-weight:
+    700;
+font-size:
+    12px;
+line-height:
+    18px;
+    
+Color:
+#262626;
+
+
+}
+
+.btnsld:hover{
+    background-color: #bdf300;
+}
