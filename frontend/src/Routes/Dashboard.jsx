@@ -4,6 +4,7 @@ import SidebarRight from "../Components/SidebarRight";
 import TaskAndProjectsFooter from "../Components/TaskAndProjectsFooter";
 import TaskAndProjectsNavbar from "../Components/TaskAndProjectsNavbar";
 import "../CSS/dashboard.css";
+import DashCards from "../Components/DashCards";
 
 const Dashboard = () => {
   return (
@@ -17,6 +18,7 @@ const Dashboard = () => {
         </div>
         <div className="dashboard-middle">
           <TaskAndProjectsNavbar />
+          <DashCards />
           <TaskAndProjectsFooter />
         </div>
       </div>

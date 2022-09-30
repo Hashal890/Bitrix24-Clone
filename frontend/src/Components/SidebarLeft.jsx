@@ -52,7 +52,7 @@ const SidebarLeft = () => {
                 </ul>
               </li>
               <li className="menu-item">
-                <Link><span>Tasks and Projects</span></Link>
+                <Link to="/taskandprojects"><span>Tasks and Projects</span></Link>
               </li>
               <li className="menu-item">
                 <Link><span>CRM</span></Link>
