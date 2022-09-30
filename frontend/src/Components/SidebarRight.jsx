@@ -2,8 +2,8 @@ import React from "react";
 import "../CSS/dashboard.css";
 import { AiFillQuestionCircle, AiOutlineSearch } from "react-icons/ai";
 import { BsBellFill, BsChatTextFill } from "react-icons/bs";
-import {MdOutlineMobileFriendly} from "react-icons/md";
-import {GiPhone} from "react-icons/gi";
+import { MdOutlineMobileFriendly } from "react-icons/md";
+import { GiPhone } from "react-icons/gi";
 
 const SidebarRight = () => {
   return (
@@ -24,19 +24,17 @@ const SidebarRight = () => {
             <AiOutlineSearch className="icon" />
           </div>
           <div className="line"></div>
-          <div className="sidebar-left-name-icon">
-            j
-          </div>
+          <div className="sidebar-left-name-icon">j</div>
         </div>
-        <div className="sidebar-left-down">
-          <hr />
-          <div className="mobile">
-            <MdOutlineMobileFriendly/>
-          </div>
-          <hr />
-          <div className="phone">
-            <GiPhone/>
-          </div>
+      </div>
+      <div className="sidebar-left-down">
+        <hr />
+        <div className="mobile">
+          <MdOutlineMobileFriendly />
+        </div>
+        <hr />
+        <div className="phone">
+          <GiPhone />
         </div>
       </div>
     </div>

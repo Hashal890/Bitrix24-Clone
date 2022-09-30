@@ -62,7 +62,7 @@ const TaskAndProjectsFooter = () => {
             English
           </Button>
         </PopoverTrigger>
-        <PopoverContent>
+        <PopoverContent color={"blackAlpha.800"}>
           <PopoverHeader fontWeight="semibold">
             Select your language
           </PopoverHeader>

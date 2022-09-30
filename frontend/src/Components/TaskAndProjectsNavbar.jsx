@@ -115,17 +115,24 @@ const TaskAndProjectsNavbar = () => {
               <Flex gap={2}>
                 <Avatar w={8} h={8} bg={"blue.600"} />
                 <Box>
-                  <Text fontSize={"16px"} fontWeight={"bold"}>
+                  <Text
+                    fontSize={"16px"}
+                    fontWeight={"bold"}
+                    color={"blackAlpha.900"}
+                  >
                     User Name
                   </Text>
-                  <Text fontSize={"14px"}>Administrator</Text>
+                  <Text fontSize={"14px"} color={"blackAlpha.800"}>
+                    Administrator
+                  </Text>
                 </Box>
               </Flex>
               <Button
                 border={"1px solid blue"}
                 borderRadius={20}
                 bg={"transparent"}
-                _hover={{ bg: "transparent" }}
+                _hover={{ bg: "transparent", color: "blackAlpha.800" }}
+                color={"blackAlpha.700"}
               >
                 Profile
               </Button>
@@ -170,7 +177,8 @@ const TaskAndProjectsNavbar = () => {
               <Button
                 leftIcon={<BiHistory color={"gray.500"} />}
                 bg={"transparent"}
-                _hover={{ bg: "transparent" }}
+                color={"blackAlpha.800"}
+                _hover={{ bg: "transparent", color: "blackAlpha.800" }}
                 fontSize={"14px"}
                 p={0}
               >
