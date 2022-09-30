@@ -31,3 +31,42 @@ Color:
 #ffffff;
 text-align: left;
 }
+
+.txtrm{
+    font-family: 
+    Montserrat, "Helvetica Neue", Verdana, "Helvetica CY", "Nimbus Sans L", sans-serif;
+font-style: 
+normal;
+font-weight: 
+400;
+font-size: 
+10px;
+line-height: 
+25px;
+
+Color:
+#ffffff;
+text-align: left;
+}
+
+.txtrm2{
+    font-family: 
+    Montserrat, "Helvetica Neue", Verdana, "Helvetica CY", "Nimbus Sans L", sans-serif;
+font-style: 
+normal;
+font-weight: 
+400;
+font-size: 
+12px;
+line-height: 
+18px;
+
+Color:
+#ffffff;
+text-align: left;
+}
+
+.icon{
+    color: #ffffff;
+    
+}

@@ -3,8 +3,16 @@ import { FaUser } from "react-icons/fa";
 import { BiWorld } from "react-icons/bi";
 import React from "react";
 import styles from "./HomeNavbar.module.css"
+import { useNavigate } from "react-router-dom";
 
 const HomeNavbar = () => {
+  const navigate = useNavigate()
+  const handleClick=()=>{
+    navigate("/signup");
+  }
+  const handleClick1=()=>{
+    navigate("/login")
+  }
   return <Flex className={styles.nav} p={5} align="center" gap={5}>
     
     <Box>
@@ -19,8 +27,8 @@ const HomeNavbar = () => {
     <Text className={styles.link}>BLOGS</Text>
     <Text className={styles.link}>SUPPORT</Text>
     <Spacer/>
-    <Button className={styles.btnsld} bg="#bdf300" borderRadius="20px">START FOR FREE</Button>
-    <Button className={styles.unstyled}  leftIcon={<FaUser/>} variant="unstyled">LOG IN</Button>
+    <Button onClick={handleClick} className={styles.btnsld} bg="#bdf300" borderRadius="20px">START FOR FREE</Button>
+    <Button onClick={handleClick1} className={styles.unstyled}  leftIcon={<FaUser/>} variant="unstyled">LOG IN</Button>
     <Button className={styles.unstyled} leftIcon={<BiWorld/>} variant="unstyled">EN</Button>
     
   </Flex>
