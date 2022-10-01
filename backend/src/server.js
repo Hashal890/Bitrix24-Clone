@@ -4,13 +4,13 @@ const dbConnect = require("./config/db");
 const mainRouter = require("./Components/UserData/user.routes");
 const todoRouter = require("./Components/TodoTask/Todo.routes");
 
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
 const app = express();
 app.use(express.json());
 app.use(cors());
 
 app.use("/", mainRouter);
-app.use("/", todoRouter)
+app.use("/", todoRouter);
 
 app.listen(PORT, async () => {
   await dbConnect();
