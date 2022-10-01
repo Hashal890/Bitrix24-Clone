@@ -2,12 +2,17 @@ const Todo = require("./Todo.model");
 
 // GET REQUEST FOR TODO
 exports.Todoget = async (req, res) => {
+  const { page = 1, limit = 5 } = req.query;
   try {
-    const todos = await Todo.find({}).sort({ createdAt: -1 });
+    const getTotalLength = await Todo.find({});
+    const todos = await Todo.find({})
+      .skip(limit * (page - 1))
+      .limit(limit);
     try {
       res.status(200).json({
         message: "Get All Todos successfully",
         todos: todos,
+        totalPages: getTotalLength.length,
       });
     } catch (error) {
       res.status(500).json({ error: error.message });

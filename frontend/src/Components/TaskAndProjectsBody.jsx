@@ -5,10 +5,12 @@ import {
   Flex,
   Heading,
   IconButton,
+  Select,
   Table,
   Tbody,
   Td,
   Text,
+  Tfoot,
   Th,
   Thead,
   Tr,
@@ -23,15 +25,20 @@ import {
   getTodosAPI,
   updateTodosAPI,
 } from "../store/todos/todos.actions";
+import { MdArrowDropDown } from "react-icons/md";
 
 const TaskAndProjectsBody = () => {
-  const { loading, error, data } = useSelector((store) => store.todos);
+  const { loading, error, data, total } = useSelector((store) => store.todos);
   const dispatch = useDispatch();
   const [toggle, setToggle] = useState(false);
+  const [page, setPage] = useState(1);
+  const [limit, setLimit] = useState(1);
 
   useEffect(() => {
-    dispatch(getTodosAPI());
+    dispatch(getTodosAPI(page, limit));
   }, [toggle]);
+
+  console.log(page, limit);
 
   return (
     <VStack spacing={3}>
@@ -100,34 +107,55 @@ const TaskAndProjectsBody = () => {
               </Tr>
             ))}
         </Tbody>
-        {/* <Tfoot>
-          <Th>Total</Th>
-          <Th></Th>
+        <Tfoot>
+          <Th>Total: {total}</Th>
           <Th></Th>
           <Th>
-            <Flex gap={2}>
-              <Button bg={"green.300"} _hover={{ bg: "green.300" }}>
-                Prev
-              </Button>
-              <Button bg={"blue.300"} _hover={{ bg: "blue.300" }}>
-                Next
-              </Button>
-            </Flex>
+            <Button
+              bg={"green.300"}
+              _hover={{ bg: "green.300" }}
+              onClick={() => {
+                setPage(page - 1);
+                setToggle(!toggle);
+              }}
+              disabled={page === 1}
+            >
+              Prev
+            </Button>
           </Th>
-          <Th></Th>
+          <Th>
+            <Button
+              bg={"blue.300"}
+              _hover={{ bg: "blue.300" }}
+              onClick={() => {
+                setPage(page + 1);
+                setToggle(!toggle);
+              }}
+              disabled={page === Math.ceil(total / page)}
+            >
+              Next
+            </Button>
+          </Th>
           <Th></Th>
           <Th>
             <Flex gap={2} alignItems={"center"}>
               <Text>Pages</Text>
-              <Select icon={<MdArrowDropDown />} cursor={"pointer"}>
-                <option value="5">5</option>
-                <option value="10">10</option>
-                <option value="15">15</option>
-                <option value="20">20</option>
+              <Select
+                icon={<MdArrowDropDown />}
+                cursor={"pointer"}
+                onChange={(e) => {
+                  setLimit(e.target.value);
+                  setToggle(!toggle);
+                }}
+              >
+                <option value="5">2</option>
+                <option value="10">5</option>
+                <option value="15">10</option>
+                <option value="20">15</option>
               </Select>
             </Flex>
           </Th>
-        </Tfoot> */}
+        </Tfoot>
       </Table>
     </VStack>
   );
