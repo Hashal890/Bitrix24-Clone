@@ -30,6 +30,8 @@ const TaskAndProjectsNavbar = () => {
   const timeRef = useRef(null);
   const [hours, setHours] = useState(new Date().getHours());
   const [minutes, setMinutes] = useState(new Date().getMinutes());
+  let token = JSON.parse(localStorage.getItem("token")) || ":";
+  let [id, email] = token.split(":");
 
   useEffect(() => {
     timeRef.current = setInterval(() => {
@@ -40,7 +42,9 @@ const TaskAndProjectsNavbar = () => {
 
   return (
     <Flex
-      p={3}
+      p={0}
+      pt={3}
+      pb={3}
       alignItems={"center"}
       justifyContent={"space-between"}
       gap={{ sm: 0, md: 5, lg: 16 }}
@@ -100,7 +104,7 @@ const TaskAndProjectsNavbar = () => {
           >
             <Flex alignItems={"center"} gap={3}>
               <Avatar w={8} h={8} />
-              User Name
+              {email === "" ? "User Email-ID" : email}
             </Flex>
           </MenuButton>
           <MenuList minW={"350px"} p={3} bg={"whiteAlpha.900"}>
@@ -120,7 +124,7 @@ const TaskAndProjectsNavbar = () => {
                     fontWeight={"bold"}
                     color={"blackAlpha.900"}
                   >
-                    User Name
+                    {email === "" ? "User Email-ID" : email}
                   </Text>
                   <Text fontSize={"14px"} color={"blackAlpha.800"}>
                     Administrator
