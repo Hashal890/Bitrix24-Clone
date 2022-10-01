@@ -11,13 +11,20 @@ const todoSchema = new mongoose.Schema({
     type: String,
     required: [true, "Must be provided todo description"],
   },
+  assigne: {
+    type: String,
+    required: [true, "Must be provided assigne name"],
+  },
+  author: {
+    type: String,
+    required: [true, "Must be provided author name"],
+  },
   completed: {
     type: Boolean,
     default: false,
   },
   createdAt: {
-    type: Date,
-    default: Date.now,
+    type: String,
   },
 });
 

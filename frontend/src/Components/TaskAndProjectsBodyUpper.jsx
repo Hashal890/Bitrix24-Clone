@@ -56,8 +56,8 @@ import { BiArrowFromLeft } from "react-icons/bi";
 const initTask = {
   title: "",
   description: "",
-  deadline: "",
-  status: false,
+  createdAt: "",
+  completed: false,
   assigne: "",
   author: "",
 };
@@ -82,6 +82,7 @@ const TaskAndProjectsBodyUpper = () => {
       ...newTask,
       [name]: value,
     });
+    console.log(newTask);
   };
 
   return (
@@ -368,7 +369,7 @@ const TaskAndProjectsBodyUpper = () => {
                         size="md"
                         type="datetime-local"
                         w={"lg"}
-                        name={"deadline"}
+                        name={"createdAt"}
                         onChange={addTaskHandleChange}
                       />
                     </Td>
