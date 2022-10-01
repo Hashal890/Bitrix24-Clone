@@ -5,7 +5,7 @@ import { FcGoogle } from "react-icons/fc";
 import { SiMicrosoftoffice, SiLivejournal } from "react-icons/si";
 import { AiFillTwitterCircle } from "react-icons/ai";
 import { MdOutlineQrCodeScanner } from "react-icons/md";
-import { Flex,Button,Link, Input, Text, Divider, Stack, Box, Image, Spacer, Select } from '@chakra-ui/react'
+import { Flex,Button,Link, Input, Text, Divider, Stack, Box} from '@chakra-ui/react'
 import styles from "./Login.module.css"
 import { useDispatch, useSelector } from "react-redux";
 import { loginAPI } from "../store/auth/auth.actions";
