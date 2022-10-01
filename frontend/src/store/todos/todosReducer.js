@@ -11,6 +11,7 @@ const initState = {
   loading: false,
   error: false,
   data: [],
+  total: 0,
 };
 
 export const todosReducer = (state = initState, { type, payload }) => {
@@ -35,6 +36,7 @@ export const todosReducer = (state = initState, { type, payload }) => {
         loading: false,
         error: false,
         data: payload.todos,
+        total: payload.totalPages,
       };
     }
     case UPDATE_TODOS_SUCCESS: {
