@@ -52,6 +52,8 @@ import {
 import { GiElectric } from "react-icons/gi";
 import { HiDotsHorizontal, HiOutlineCloud } from "react-icons/hi";
 import { BiArrowFromLeft } from "react-icons/bi";
+import { useDispatch } from "react-redux";
+import { postTodosAPI } from "../store/todos/todos.actions";
 
 const initTask = {
   title: "",
@@ -75,6 +77,7 @@ const TaskAndProjectsBodyUpper = () => {
     onClose: automationOnClose,
   } = useDisclosure();
   const [newTask, setNewTask] = useState(initTask);
+  const dispatch = useDispatch();
 
   const addTaskHandleChange = (e) => {
     const { name, value } = e.target;
@@ -82,7 +85,6 @@ const TaskAndProjectsBodyUpper = () => {
       ...newTask,
       [name]: value,
     });
-    console.log(newTask);
   };
 
   return (
@@ -422,13 +424,21 @@ const TaskAndProjectsBodyUpper = () => {
                 color={"#535b69"}
                 gap={3}
               >
-                <Button bg={"#bbed21"} _hover={{ bg: "#bbed21" }}>
+                <Button
+                  bg={"#bbed21"}
+                  _hover={{ bg: "#bbed21" }}
+                  onClick={() => {
+                    dispatch(postTodosAPI(newTask));
+                    newTaskOnClose();
+                  }}
+                >
                   ADD TASK
                 </Button>
                 <Button
                   bg={"transparent"}
                   _hover={{ bg: "#cfd4d8" }}
                   border={"1px solid #c6cdc3"}
+                  onClick={() => dispatch(postTodosAPI(newTask))}
                 >
                   ADD TASK AND CREATE ANOTHER ONE
                 </Button>

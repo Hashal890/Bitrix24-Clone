@@ -1,15 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Avatar,
   Button,
   Flex,
+  Heading,
   IconButton,
-  Select,
   Table,
   Tbody,
   Td,
   Text,
-  Tfoot,
   Th,
   Thead,
   Tr,
@@ -17,12 +16,28 @@ import {
 } from "@chakra-ui/react";
 import TaskAndProjectsBodyUpper from "./TaskAndProjectsBodyUpper";
 import { RiDeleteBinFill } from "react-icons/ri";
-import { MdArrowDropDown } from "react-icons/md";
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
+import {
+  deleteTodosAPI,
+  getTodosAPI,
+  updateTodosAPI,
+} from "../store/todos/todos.actions";
 
 const TaskAndProjectsBody = () => {
+  const { loading, error, data } = useSelector((store) => store.todos);
+  const dispatch = useDispatch();
+  const [toggle, setToggle] = useState(false);
+
+  useEffect(() => {
+    dispatch(getTodosAPI());
+  }, [toggle]);
+
   return (
     <VStack spacing={3}>
       <TaskAndProjectsBodyUpper />
+      {loading && <Heading textAlign={"center"}>Loading...</Heading>}
+      {error && <Heading textAlign={"center"}>Something went wrong...</Heading>}
       <Table
         variant="striped"
         color="#535c69"
@@ -33,7 +48,6 @@ const TaskAndProjectsBody = () => {
           <Tr>
             <Th>Name</Th>
             <Th>Active</Th>
-            <Th>Deadline</Th>
             <Th>Created by</Th>
             <Th>Responsible person</Th>
             <Th>Status</Th>
@@ -41,33 +55,52 @@ const TaskAndProjectsBody = () => {
           </Tr>
         </Thead>
         <Tbody>
-          <Tr>
-            <Td>Task One</Td>
-            <Td>September 30, 5:33 pm</Td>
-            <Td>October 1, 5:33 pm</Td>
-            <Td>
-              <Flex gap={2} alignItems={"center"}>
-                <Avatar h={"25px"} w={"25px"} />
-                <Text>User One</Text>
-              </Flex>
-            </Td>
-            <Td>
-              <Flex gap={2} alignItems={"center"}>
-                <Avatar h={"25px"} w={"25px"} />
-                <Text>User Two</Text>
-              </Flex>
-            </Td>
-            <Td>Not Completed</Td>
-            <Td textAlign={"center"}>
-              <IconButton
-                color={"blue.600"}
-                _hover={{ bg: "transparent", color: "red.600" }}
-                icon={<RiDeleteBinFill />}
-              />
-            </Td>
-          </Tr>
+          {data &&
+            data.map((el) => (
+              <Tr key={el._id}>
+                <Td>{el.title}</Td>
+                <Td>{el.createdAt}</Td>
+                <Td>
+                  <Flex gap={2} alignItems={"center"}>
+                    <Avatar h={"25px"} w={"25px"} />
+                    <Text>{el.author}</Text>
+                  </Flex>
+                </Td>
+                <Td>
+                  <Flex gap={2} alignItems={"center"}>
+                    <Avatar h={"25px"} w={"25px"} />
+                    <Text>{el.assigne}</Text>
+                  </Flex>
+                </Td>
+                <Td>
+                  <Button
+                    onClick={() => {
+                      dispatch(
+                        updateTodosAPI(el._id, { completed: !el.completed })
+                      );
+                      setToggle(!toggle);
+                    }}
+                    bg={"transparent"}
+                    _hover={{ bg: "transparent" }}
+                  >
+                    {el.completed ? "Completed" : "Not Completed"}
+                  </Button>
+                </Td>
+                <Td textAlign={"center"}>
+                  <IconButton
+                    color={"blue.600"}
+                    _hover={{ bg: "transparent", color: "red.600" }}
+                    icon={<RiDeleteBinFill />}
+                    onClick={() => {
+                      dispatch(deleteTodosAPI(el._id));
+                      setToggle(!toggle);
+                    }}
+                  />
+                </Td>
+              </Tr>
+            ))}
         </Tbody>
-        <Tfoot>
+        {/* <Tfoot>
           <Th>Total</Th>
           <Th></Th>
           <Th></Th>
@@ -94,7 +127,7 @@ const TaskAndProjectsBody = () => {
               </Select>
             </Flex>
           </Th>
-        </Tfoot>
+        </Tfoot> */}
       </Table>
     </VStack>
   );
