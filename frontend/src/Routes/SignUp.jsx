@@ -1,24 +1,22 @@
 import React from "react";
-import { IoIosArrowRoundBack } from "react-icons/io";
 import { BsFacebook, BsApple } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 import { SiMicrosoftoffice, SiLivejournal } from "react-icons/si";
 import { AiFillTwitterCircle } from "react-icons/ai";
-import { Flex,Button, Checkbox,Link, Input, Text, Divider, Stack, Box, Image, Spacer, Select } from '@chakra-ui/react'
+import { Flex,Button, Checkbox,Link, Input, Text, Divider, Stack, Box } from '@chakra-ui/react'
 import styles from "./Login.module.css"
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import { loginAPI } from "../store/auth/auth.actions";
+import { signupAPI } from "../store/auth/auth.actions";
 import LeftBox from "./LeftBox";
+import { useState } from "react";
 
 
 const SignUp = () => {
   const {loading,error,token} = useSelector((store)=>store.auth)
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+  const [email,setEmail] = useState("");
   console.log(loading,error,token);
-  useEffect(()=>{
-       dispatch(loginAPI({email:"moneyforey786@gmail.com"}));
-  },[])
+
   return <Flex gap="60px">
     <LeftBox/>
     <Stack>
@@ -42,7 +40,7 @@ const SignUp = () => {
         <Divider />
       </Flex>
       <Text mt="50px" className={styles.txlevel}>Enter Email</Text>
-      <Input />
+      <Input onChange={(e)=>setEmail(e.target.value)}/>
       <Text mt="50px" className={styles.txl2}>By registering you confirm that you accept the Terms of Service and the Privacy Policy.</Text>
 
       <Checkbox defaultChecked className={styles.txl2}>
@@ -53,7 +51,7 @@ const SignUp = () => {
       </Checkbox>
       <Divider/>
       <Flex>
-        <Button>REGISTER FOR FREE</Button>
+        <Button onClick={()=>dispatch(signupAPI({email:email}))}>REGISTER FOR FREE</Button>
         <Button>I HAVE A COUPON</Button>
         </Flex> 
         <Text className={styles.txl2}>This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply</Text>

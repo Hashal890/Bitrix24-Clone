@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Image, Stack, Text } from "@chakra-ui/react";
+import { Button, Flex, Image, Stack, Text } from "@chakra-ui/react";
 import {AiFillCheckCircle } from "react-icons/ai";
 import styles from "./HomeMiddle.module.css";
 

@@ -1,4 +1,4 @@
-import { Box, Button, Divider, Flex, Image, Spacer, Text } from "@chakra-ui/react";
+import { Box, Button,  Flex, Spacer, Text } from "@chakra-ui/react";
 import { FaUser } from "react-icons/fa";
 import { BiWorld } from "react-icons/bi";
 import React from "react";
