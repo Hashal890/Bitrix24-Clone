@@ -43,7 +43,7 @@ const SidebarLeft = () => {
                   <p style={{display: collaboration ? "block" : "none"}}><BsChevronUp/></p>
                 </Link>
                 <ul className="sub-menu" style={{display: collaboration ? "block" : "none"}}>
-                  <li><Link>Feed</Link></li>
+                  <li><Link to="/dashboard">Feed</Link></li>
                   <li><Link>Calendar</Link></li>
                   <li><Link>Online documents</Link></li>
                   <li><Link>Bitrix24.Drive</Link></li>
@@ -52,7 +52,7 @@ const SidebarLeft = () => {
                 </ul>
               </li>
               <li className="menu-item">
-                <Link><span>Tasks and Projects</span></Link>
+                <Link to="/taskandprojects"><span>Tasks and Projects</span></Link>
               </li>
               <li className="menu-item">
                 <Link><span>CRM</span></Link>
