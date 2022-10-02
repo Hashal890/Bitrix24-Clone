@@ -1,7 +1,8 @@
 import { Box, Divider, Flex, Input, InputGroup, InputRightElement, Stack, Text } from "@chakra-ui/react";
 import { FaFacebookF, FaYoutube, FaInstagram, FaLinkedinIn, FaPinterestP,FaSearch } from "react-icons/fa";
 import React from "react";
-import styles from "./HomeFooter.module.css";
+import styles from "../CSS/HomeFooter.module.css";
+
 const upbx = [
   {
     head: 'BITRIX', subtl: ['Bitrix24', 'Pricing', 'Media kit', 'Contact us', 'In the press']

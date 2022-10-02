@@ -15,10 +15,10 @@ import {
   Box,
   Heading,
 } from "@chakra-ui/react";
-import styles from "./Login.module.css";
+import styles from "../CSS/Login.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { signupAPI } from "../store/auth/auth.actions";
-import LeftBox from "./LeftBox";
+import LeftBox from "../Components/LeftBox";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";

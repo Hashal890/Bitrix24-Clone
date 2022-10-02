@@ -12,7 +12,7 @@ import { BsCloudy } from "react-icons/bs";
 import { GiGlobe } from "react-icons/gi";
 import { GoPrimitiveDot } from "react-icons/go";
 import { useState } from "react";
-import styles from "./HomeTop.module.css";
+import styles from "../CSS/HomeTop.module.css";
 import { useNavigate } from "react-router-dom";
 
 const cntnt = [

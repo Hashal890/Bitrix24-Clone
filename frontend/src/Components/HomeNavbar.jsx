@@ -2,7 +2,7 @@ import { Box, Button, Flex, Spacer, Text } from "@chakra-ui/react";
 import { FaUser } from "react-icons/fa";
 import { BiWorld } from "react-icons/bi";
 import React from "react";
-import styles from "./HomeNavbar.module.css";
+import styles from "../CSS/HomeNavbar.module.css";
 import { useNavigate } from "react-router-dom";
 
 const HomeNavbar = () => {
