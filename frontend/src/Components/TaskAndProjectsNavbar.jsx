@@ -25,13 +25,18 @@ import { MdExtension } from "react-icons/md";
 import { IoIosArrowForward } from "react-icons/io";
 import { FiLogOut } from "react-icons/fi";
 import { IoRocket } from "react-icons/io5";
+import { useDispatch } from "react-redux";
+import { logoutAPI } from "../store/auth/auth.actions";
 
 const TaskAndProjectsNavbar = () => {
   const timeRef = useRef(null);
   const [hours, setHours] = useState(new Date().getHours());
   const [minutes, setMinutes] = useState(new Date().getMinutes());
+
   let token =(localStorage.getItem("token")) || ":";
+
   let [id, email] = token.split(":");
+  const dispatch = useDispatch();
 
   useEffect(() => {
     timeRef.current = setInterval(() => {
@@ -80,7 +85,6 @@ const TaskAndProjectsNavbar = () => {
         </InputGroup>
         <Heading color={"#fff"} fontWeight={"light"}>
           {hours}:{minutes}
-          <sup>PM</sup>
         </Heading>
         <Button
           leftIcon={<BsFlagFill />}
@@ -231,6 +235,9 @@ const TaskAndProjectsNavbar = () => {
                 fontSize={"14px"}
                 w={"45%"}
                 color={"gray.500"}
+                onClick={() => {
+                  dispatch(logoutAPI());
+                }}
               >
                 Log out
               </Button>

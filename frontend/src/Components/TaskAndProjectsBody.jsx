@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import {
+  Alert,
+  AlertIcon,
   Avatar,
   Button,
   Flex,
-  Heading,
   IconButton,
   Select,
   Table,
@@ -28,23 +29,44 @@ import {
 import { MdArrowDropDown } from "react-icons/md";
 
 const TaskAndProjectsBody = () => {
-  const { loading, error, data, total } = useSelector((store) => store.todos);
+  const { loading, error, data, totalData, totalPages } = useSelector(
+    (store) => store.todos
+  );
   const dispatch = useDispatch();
-  const [toggle, setToggle] = useState(false);
   const [page, setPage] = useState(1);
   const [limit, setLimit] = useState(1);
 
   useEffect(() => {
     dispatch(getTodosAPI(page, limit));
-  }, [toggle]);
-
-  console.log(page, limit);
+  }, [page, limit]);
 
   return (
     <VStack spacing={3}>
       <TaskAndProjectsBodyUpper />
-      {loading && <Heading textAlign={"center"}>Loading...</Heading>}
-      {error && <Heading textAlign={"center"}>Something went wrong...</Heading>}
+      {loading && (
+        <Alert
+          status="info"
+          colorScheme={"green"}
+          color={"blackAlpha.900"}
+          fontWeight={"bold"}
+          borderRadius={"20px"}
+        >
+          <AlertIcon />
+          Data is coming from backend!
+        </Alert>
+      )}
+      {error && (
+        <Alert
+          status="error"
+          colorScheme={"red"}
+          color={"blackAlpha.900"}
+          fontWeight={"bold"}
+          borderRadius={"20px"}
+        >
+          <AlertIcon />
+          There was an error processing your request!
+        </Alert>
+      )}
       <Table
         variant="striped"
         color="#535c69"
@@ -85,7 +107,6 @@ const TaskAndProjectsBody = () => {
                       dispatch(
                         updateTodosAPI(el._id, { completed: !el.completed })
                       );
-                      setToggle(!toggle);
                     }}
                     bg={"transparent"}
                     _hover={{ bg: "transparent" }}
@@ -100,7 +121,6 @@ const TaskAndProjectsBody = () => {
                     icon={<RiDeleteBinFill />}
                     onClick={() => {
                       dispatch(deleteTodosAPI(el._id));
-                      setToggle(!toggle);
                     }}
                   />
                 </Td>
@@ -108,15 +128,14 @@ const TaskAndProjectsBody = () => {
             ))}
         </Tbody>
         <Tfoot>
-          <Th>Total: {total}</Th>
+          <Th>Total: {totalData}</Th>
           <Th></Th>
           <Th>
             <Button
               bg={"green.300"}
-              _hover={{ bg: "green.300" }}
+              _hover={{ bg: "green.600", color: "white" }}
               onClick={() => {
                 setPage(page - 1);
-                setToggle(!toggle);
               }}
               disabled={page === 1}
             >
@@ -126,12 +145,11 @@ const TaskAndProjectsBody = () => {
           <Th>
             <Button
               bg={"blue.300"}
-              _hover={{ bg: "blue.300" }}
+              _hover={{ bg: "blue.600", color: "white" }}
               onClick={() => {
                 setPage(page + 1);
-                setToggle(!toggle);
               }}
-              disabled={page === Math.ceil(total / page)}
+              disabled={page === totalPages || data.length === 0}
             >
               Next
             </Button>
@@ -145,13 +163,12 @@ const TaskAndProjectsBody = () => {
                 cursor={"pointer"}
                 onChange={(e) => {
                   setLimit(e.target.value);
-                  setToggle(!toggle);
                 }}
               >
-                <option value="5">2</option>
-                <option value="10">5</option>
-                <option value="15">10</option>
-                <option value="20">15</option>
+                <option value="5">1</option>
+                <option value="10">3</option>
+                <option value="15">5</option>
+                <option value="20">7</option>
               </Select>
             </Flex>
           </Th>
