@@ -1,5 +1,6 @@
 import { Box, Button, Flex, Image, Stack, Text } from "@chakra-ui/react";
 import { AiFillCheckCircle } from "react-icons/ai";
+import {  useNavigate } from "react-router-dom";
 import styles from "./HomeBottom.module.css"
 
 const cnyatr = [
@@ -20,6 +21,10 @@ const stl = [
 ]
 
 const HomeBottom = () => {
+    const navigate = useNavigate()
+    const handleClick=()=>{
+        navigate("/")
+    }
     return (
         <Box>
             <Box my="30px">
@@ -44,7 +49,7 @@ const HomeBottom = () => {
                 </Stack>
             </Flex>
             <Text my="20px" className={styles.txhd}>Ready to try?</Text>
-            <Button my="20px" bg="#bdf300" borderRadius="20px">REGISTER FREE</Button>
+            <Button onClick={handleClick} my="20px" bg="#bdf300" borderRadius="20px">REGISTER FREE</Button>
         </Box>
     )
 }

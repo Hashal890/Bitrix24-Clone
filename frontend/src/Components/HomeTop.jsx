@@ -5,6 +5,7 @@ import { GiGlobe } from "react-icons/gi";
 import { GoPrimitiveDot } from "react-icons/go";
 import { useState } from "react";
 import styles from "./HomeTop.module.css";
+import { useNavigate } from "react-router-dom";
 
 const cntnt = [
     {
@@ -87,7 +88,7 @@ const cntnt = [
 
 const HomeTop = () => {
     const [index, setIndex] = useState(0);
-
+    const navigate = useNavigate();
     useEffect(() => {
 
         let localCounter = 0;
@@ -101,6 +102,10 @@ const HomeTop = () => {
             }
         }, 3000);
       }, []);
+
+      const handleClick=()=>{
+             navigate("/")
+      }
 
     return (
         <Box mt="100px">
@@ -119,7 +124,7 @@ const HomeTop = () => {
                             <Text className={styles.points}>{p}</Text>
                         </Flex>)
                     }
-                    <Button bg="#bdf300" borderRadius="20px">START FOR FREE</Button>
+                    <Button onClick={handleClick} bg="#bdf300" borderRadius="20px">START FOR FREE</Button>
                 </Stack>
                 <Image width="500px" src={cntnt[index].img} />
 

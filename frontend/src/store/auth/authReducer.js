@@ -3,6 +3,7 @@ const token = localStorage.getItem("token");
 const initAuth ={
       loading:false,
       error:false,
+      isRegistered:false,
       isAuthanticated:false,
       token:token || "",
       message:'' 
@@ -30,7 +31,7 @@ const authReducer =(state=initAuth,{type,payload})=>{
                 ...state,
                 loading:false,
                 error:false,
-               
+                isRegistered:true,
                 token:payload.token
             }
         }

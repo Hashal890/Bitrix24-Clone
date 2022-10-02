@@ -12,7 +12,7 @@ const LeftBox =()=>{
           <Flex align="bottom">
   
             <IoIosArrowRoundBack />
-            <Link to="/" className={styles.a}>back to site</Link >
+            <Link to="/home" className={styles.a}>back to site</Link >
           </Flex>
         </Flex>
   

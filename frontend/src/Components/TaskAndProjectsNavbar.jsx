@@ -30,7 +30,7 @@ const TaskAndProjectsNavbar = () => {
   const timeRef = useRef(null);
   const [hours, setHours] = useState(new Date().getHours());
   const [minutes, setMinutes] = useState(new Date().getMinutes());
-  let token = JSON.parse(localStorage.getItem("token")) || ":";
+  let token =(localStorage.getItem("token")) || ":";
   let [id, email] = token.split(":");
 
   useEffect(() => {

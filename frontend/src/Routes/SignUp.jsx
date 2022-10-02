@@ -9,13 +9,20 @@ import { useDispatch, useSelector } from "react-redux";
 import { signupAPI } from "../store/auth/auth.actions";
 import LeftBox from "./LeftBox";
 import { useState } from "react";
+import {useNavigate } from "react-router-dom";
 
 
 const SignUp = () => {
-  const {loading,error,token} = useSelector((store)=>store.auth)
+  const {loading,error,isRegisterd,token} = useSelector((store)=>store.auth)
   const dispatch = useDispatch();
+  const navigate = useNavigate()
   const [email,setEmail] = useState("");
   console.log(loading,error,token);
+
+  const handleSignUp=()=>{
+    dispatch(signupAPI({email:email}))
+        navigate("/login")   
+}
 
   return <Flex gap="60px">
     <LeftBox/>
@@ -50,9 +57,9 @@ const SignUp = () => {
         I want to receive training materials
       </Checkbox>
       <Divider/>
-      <Flex>
-        <Button onClick={()=>dispatch(signupAPI({email:email}))}>REGISTER FOR FREE</Button>
-        <Button>I HAVE A COUPON</Button>
+      <Flex gap={4}>
+        <Button borderRadius='20px' bg='#bdf300' onClick={handleSignUp}>REGISTER FOR FREE</Button>
+        <Button variant='unstyled'>I HAVE A COUPON</Button>
         </Flex> 
         <Text className={styles.txl2}>This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply</Text>
         <Link>Need help?</Link>

@@ -1,5 +1,6 @@
 import { Button, Flex, Image, Stack, Text } from "@chakra-ui/react";
 import {AiFillCheckCircle } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
 import styles from "./HomeMiddle.module.css";
 
 const tx =[
@@ -12,6 +13,10 @@ const tx =[
 ]
 
 const HomeMiddle=()=>{
+    const navigate = useNavigate();
+    const handleClick =()=>{
+          navigate("/")
+    }
     return(
         <Flex mt="100px" p="40px">
            <Stack spacing="25px">
@@ -24,7 +29,7 @@ const HomeMiddle=()=>{
                  <Text className={styles.points}>{t}</Text>
                </Flex>)
             }
-            <Button  width="160px" my="20px" bg="#bdf300" borderRadius="20px">START FOR FREE</Button>
+            <Button onClick={handleClick} width="160px" my="20px" bg="#bdf300" borderRadius="20px">START FOR FREE</Button>
            </Stack>
            <Image width="500px" src="https://www.bitrix24.in/upload/optimizer/converted/images/content_en/screens/tools/crm/features.png.webp?1663340850000"/>
         </Flex>

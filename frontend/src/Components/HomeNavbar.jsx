@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 const HomeNavbar = () => {
   const navigate = useNavigate()
   const handleClick=()=>{
-    navigate("/signup");
+    navigate("/");
   }
   const handleClick1=()=>{
     navigate("/login")
