@@ -13,6 +13,7 @@ import { GiGlobe } from "react-icons/gi";
 import { GoPrimitiveDot } from "react-icons/go";
 import { useState } from "react";
 import styles from "../CSS/HomeTop.module.css";
+import { useNavigate } from "react-router-dom";
 
 const cntnt = [
   {
@@ -139,7 +140,6 @@ const HomeTop = () => {
         </Stack>
         <Image width="500px" src={cntnt[index].img} />
       </Flex>
-
       <Flex gap={5} p="40px" align="center" bg="#3cc8f4">
         <Flex p={3} borderRadius="20px" bg="#5ac8f6" align="center" gap={2}>
           <BsCloudy size="40px" color="#ffffff" />

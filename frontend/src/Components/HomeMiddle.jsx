@@ -1,6 +1,7 @@
 import { Button, Flex, Image, Stack, Text } from "@chakra-ui/react";
-import { AiFillCheckCircle } from "react-icons/ai";
 import styles from "../CSS/HomeMiddle.module.css";
+import { AiFillCheckCircle } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
 
 const tx = [
   "Replaces all your current SaaS solutions",

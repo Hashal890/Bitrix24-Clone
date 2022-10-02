@@ -13,6 +13,7 @@ const HomeNavbar = () => {
   const handleClick1 = () => {
     navigate("/login");
   };
+
   return (
     <Flex className={styles.nav} p={5} align="center" gap={5}>
       <Box>

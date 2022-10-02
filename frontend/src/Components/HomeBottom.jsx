@@ -1,6 +1,7 @@
 import { Box, Button, Flex, Image, Stack, Text } from "@chakra-ui/react";
 import { AiFillCheckCircle } from "react-icons/ai";
 import styles from "../CSS/HomeBottom.module.css";
+import {  useNavigate } from "react-router-dom";
 
 const cnyatr = [
   "https://www.bitrix24.in/upload/optimizer/converted/images/content_en/press/icons/color_forbes.png.webp?1664359518000",

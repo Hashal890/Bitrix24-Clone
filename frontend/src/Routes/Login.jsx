@@ -105,6 +105,5 @@ const Login = () => {
       </Stack>
     </Flex>
   );
-};
 
 export default Login;
