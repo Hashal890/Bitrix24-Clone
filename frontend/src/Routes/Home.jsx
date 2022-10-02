@@ -6,13 +6,15 @@ import HomeNavbar from "../Components/HomeNavbar";
 import HomeTop from "../Components/HomeTop";
 
 const Home = () => {
-  return <>
-  <HomeNavbar/>
-  <HomeTop/>
-  <HomeMiddle/>
-  <HomeBottom/>
-  <HomeFooter/>
-  </>
+  return (
+    <>
+      <HomeNavbar />
+      <HomeTop />
+      <HomeMiddle />
+      <HomeBottom />
+      <HomeFooter />
+    </>
+  );
 };
 
 export default Home;
