@@ -1,4 +1,6 @@
 import {
+  Alert,
+  AlertIcon,
   Box,
   Button,
   Checkbox,
@@ -429,6 +431,10 @@ const TaskAndProjectsBodyUpper = () => {
                   _hover={{ bg: "#bbed21" }}
                   onClick={() => {
                     dispatch(postTodosAPI(newTask));
+                    <Alert status="success" variant="left-accent">
+                      <AlertIcon />
+                      Data uploaded to the server. Fire on!
+                    </Alert>;
                     newTaskOnClose();
                   }}
                 >
