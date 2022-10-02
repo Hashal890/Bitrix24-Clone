@@ -109,7 +109,7 @@ const HomeTop = () => {
   }, []);
 
   const handleClick = () => {
-    navigate("/");
+    navigate("/signup");
   };
 
   return (

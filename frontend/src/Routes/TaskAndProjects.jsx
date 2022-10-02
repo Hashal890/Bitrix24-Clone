@@ -5,8 +5,19 @@ import TaskAndProjectsFooter from "../Components/TaskAndProjectsFooter";
 import TaskAndProjectsNavbar from "../Components/TaskAndProjectsNavbar";
 import SidebarLeft from "../Components/SidebarLeft";
 import SidebarRight from "../Components/SidebarRight";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const TaskAndProjects = () => {
+  const token = localStorage.getItem("token");
+  const navigate = useNavigate();
+
+  if (token === null) {
+    return <Navigate to="/signup" />;
+  } else {
+    const [id, email] = token.split(":");
+    if (!id && !email) navigate("/signup");
+  }
+
   return (
     <Box
       bgImage={
