@@ -36,7 +36,7 @@ const Login = () => {
     if (isAuthanticated) {
       navigate("/dashboard");
     }
-  }, []);
+  }, [isAuthanticated, navigate]);
 
   return (
     <Flex gap="60px">
