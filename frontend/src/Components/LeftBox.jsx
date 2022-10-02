@@ -1,5 +1,5 @@
 import { Box, Flex, Image, Select, Spacer, Stack, Text } from "@chakra-ui/react";
-import styles from "./Login.module.css";
+import styles from "../CSS/Login.module.css";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import { Link } from "react-router-dom";
 
