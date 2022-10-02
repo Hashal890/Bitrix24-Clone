@@ -1,25 +1,34 @@
 const Todo = require("./Todo.model");
-//deployment done
+
 // GET REQUEST FOR TODO
-exports.Todoget = async (req, res) => {
+exports.Todoget = (req, res) => {
   const { page = 1, limit = 5 } = req.query;
-  try {
-    const getTotalLength = await Todo.find({});
-    const todos = await Todo.find({})
-      .skip(limit * (page - 1))
-      .limit(limit);
-    try {
+  Todo.paginate({}, { page: page, limit: limit })
+    .then((response) => {
       res.status(200).json({
-        message: "Get All Todos successfully",
-        todos: todos,
-        totalPages: getTotalLength.length,
+        response,
       });
-    } catch (error) {
-      res.status(500).json({ error: error.message });
-    }
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
+    })
+    .catch((err) => {
+      res.status(500).json({ error: err.message });
+    });
+  // try {
+  //   const getTotalLength = await Todo.find();
+  //   const todos = await Todo.find()
+  //     .skip(limit * (page - 1))
+  //     .limit(limit);
+  //   try {
+  //     res.status(200).json({
+  //       message: "Get All Todos successfully",
+  //       todos: todos,
+  //       total: getTotalLength.length,
+  //     });
+  //   } catch (error) {
+  //     res.status(500).json({ error: error.message });
+  //   }
+  // } catch (err) {
+  //   res.status(500).json({ error: err.message });
+  // }
 };
 
 // POST REQUEST FOR TODOS

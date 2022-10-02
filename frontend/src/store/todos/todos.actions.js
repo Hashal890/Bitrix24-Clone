@@ -11,10 +11,10 @@ import {
 export const getTodosAPI = (page, limit) => async (dispatch) => {
   dispatch({ type: TODOS_LOADING });
   try {
-    let res = await axios.get(
-      `https://betrix24-backend.herokuapp.com/get?limit=${limit}&page=${page}`
+    let getRequestRes = await axios.get(
+      `https://betrix24-backend.herokuapp.com/get?page=${page}&limit=${limit}`
     );
-    dispatch({ type: GET_TODOS_SUCCESS, payload: res.data });
+    dispatch({ type: GET_TODOS_SUCCESS, payload: getRequestRes.data.response });
   } catch (err) {
     dispatch({ type: TODOS_ERROR });
   }
@@ -23,7 +23,10 @@ export const getTodosAPI = (page, limit) => async (dispatch) => {
 export const updateTodosAPI = (id, data) => async (dispatch) => {
   dispatch({ type: TODOS_LOADING });
   try {
-    await axios.patch(`https://betrix24-backend.herokuapp.com/patch/${id}`, data);
+    await axios.patch(
+      `https://betrix24-backend.herokuapp.com/patch/${id}`,
+      data
+    );
     dispatch({ type: UPDATE_TODOS_SUCCESS });
   } catch (err) {
     dispatch({ type: TODOS_ERROR });

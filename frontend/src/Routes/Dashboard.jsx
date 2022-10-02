@@ -10,13 +10,13 @@ const Dashboard = () => {
   return (
     <div className="dashboard-container">
       <div className="dashboard-body">
-        <div className="dashboard-left">
+        <div className="dashboard-left" style={{width:"15%"}}>
           <SidebarLeft />
         </div>
-        <div className="dashboard-right">
+        <div className="dashboard-right" style={{width:"5%"}}>
           <SidebarRight />
         </div>
-        <div className="dashboard-middle">
+        <div className="dashboard-middle" style={{width:"80%"}}>
           <TaskAndProjectsNavbar />
           <DashCards />
           <TaskAndProjectsFooter />
