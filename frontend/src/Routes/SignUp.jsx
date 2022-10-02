@@ -13,37 +13,45 @@ import {
   Divider,
   Stack,
   Box,
+  Heading,
 } from "@chakra-ui/react";
-import styles from "../CSS/Login.module.css";
+import styles from "./Login.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { signupAPI } from "../store/auth/auth.actions";
-import LeftBox from "../Components/LeftBox";
+import LeftBox from "./LeftBox";
 import { useState } from "react";
-<<<<<<< HEAD
-import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const SignUp = () => {
-  const { loading, error, token, message } = useSelector((store) => store.auth);
+  const { loading, error, isRegisterd, message } = useSelector(
+    (store) => store.auth
+  );
   const dispatch = useDispatch();
-  const [email, setEmail] = useState("");
   const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+
+  const handleSignUp = () => {
+    dispatch(signupAPI({ email: email }));
+    if (!error) navigate("/login");
+    else if (
+      error &&
+      message ===
+        "Cannot create a User with existing Email, Please try another one"
+    )
+      navigate("/login");
+  };
 
   useEffect(() => {
-    if (token !== "") navigate("/dashboard");
+    if (isRegisterd) navigate("/login");
   }, []);
-
-  const handleSignUp=()=>{
-    dispatch(signupAPI({email:email}))
-        navigate("/login")   
-}
 
   return (
     <Flex gap="60px">
       <LeftBox />
-      {loading && <h1>Loading...</h1>}
-      {error && <h1>{message}</h1>}
       <Stack>
+        {loading && <Heading>Loading...</Heading>}
+        {error && <Heading>Error:- {message}</Heading>}
         <Text className={styles.txhd}>Bitrix24 Registration</Text>
         <Divider />
         <Text mt="100px" className={styles.txl1}>
@@ -76,7 +84,11 @@ const SignUp = () => {
         <Text mt="50px" className={styles.txlevel}>
           Enter Email
         </Text>
-        <Input onChange={(e) => setEmail(e.target.value)} />
+        <Input
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Enter your Email-ID"
+          maxW={"400px"}
+        />
         <Text mt="50px" className={styles.txl2}>
           By registering you confirm that you accept the Terms of Service and
           the Privacy Policy.
@@ -88,46 +100,16 @@ const SignUp = () => {
           I want to receive training materials
         </Checkbox>
         <Divider />
-<<<<<<< HEAD
-        <Flex>
-          <Button
-            onClick={() => {
-              dispatch(signupAPI({ email: email }));
-              if (token !== "") navigate("/dashboard");
-              if (
-                message ===
-                "Cannot create a User with existing Email, Please try another one"
-              )
-                navigate("/login");
-            }}
-          >
+        <Flex gap={4}>
+          <Button borderRadius="20px" bg="#bdf300" onClick={handleSignUp}>
             REGISTER FOR FREE
           </Button>
-          <Button>I HAVE A COUPON</Button>
+          <Button variant="unstyled">I HAVE A COUPON</Button>
         </Flex>
         <Text className={styles.txl2}>
           This site is protected by reCAPTCHA and the Google Privacy Policy and
           Terms of Service apply
         </Text>
-=======
-      </Flex>
-      <Text mt="50px" className={styles.txlevel}>Enter Email</Text>
-      <Input onChange={(e)=>setEmail(e.target.value)}/>
-      <Text mt="50px" className={styles.txl2}>By registering you confirm that you accept the Terms of Service and the Privacy Policy.</Text>
-
-      <Checkbox defaultChecked className={styles.txl2}>
-        I want to receive product updates info and special offers
-      </Checkbox>
-      <Checkbox defaultChecked className={styles.txl2}>
-        I want to receive training materials
-      </Checkbox>
-      <Divider/>
-      <Flex gap={4}>
-        <Button borderRadius='20px' bg='#bdf300' onClick={handleSignUp}>REGISTER FOR FREE</Button>
-        <Button variant='unstyled'>I HAVE A COUPON</Button>
-        </Flex> 
-        <Text className={styles.txl2}>This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply</Text>
->>>>>>> 21a27c5efefc227addcf35325ade5ac179b6433a
         <Link>Need help?</Link>
       </Stack>
     </Flex>

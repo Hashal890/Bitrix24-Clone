@@ -27,16 +27,16 @@ import { FiLogOut } from "react-icons/fi";
 import { IoRocket } from "react-icons/io5";
 import { useDispatch } from "react-redux";
 import { logoutAPI } from "../store/auth/auth.actions";
+import { useNavigate } from "react-router-dom";
 
 const TaskAndProjectsNavbar = () => {
   const timeRef = useRef(null);
   const [hours, setHours] = useState(new Date().getHours());
   const [minutes, setMinutes] = useState(new Date().getMinutes());
-
-  let token =(localStorage.getItem("token")) || ":";
-
+  let token = localStorage.getItem("token") || ":";
   let [id, email] = token.split(":");
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     timeRef.current = setInterval(() => {
@@ -237,6 +237,7 @@ const TaskAndProjectsNavbar = () => {
                 color={"gray.500"}
                 onClick={() => {
                   dispatch(logoutAPI());
+                  navigate("/");
                 }}
               >
                 Log out

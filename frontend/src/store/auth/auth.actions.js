@@ -13,23 +13,25 @@ export const loginAPI = (creds) => async (dispatch) => {
   dispatch({ type: Auth_LogIn_Loading });
   try {
     let res = await axios.post(
-      " https://betrix24-backend.herokuapp.com/login",
+      "https://betrix24-backend.herokuapp.com/login",
       creds
     );
     dispatch({ type: Auth_LogIn_Success, payload: res.data });
     return res.data;
   } catch (err) {
-    dispatch({ type: Auth_LogIn_Error, payload: err.response });
+    dispatch({ type: Auth_LogIn_Error });
   }
 };
 
-export const logoutAPI = { type: Auth_Logout };
+export const logoutAPI = () => (dispatch) => {
+  dispatch({ type: Auth_Logout });
+};
 
 export const signupAPI = (creds) => async (dispatch) => {
   dispatch({ type: Auth_SignUp_Loading });
   try {
     let res = await axios.post(
-      " https://betrix24-backend.herokuapp.com/signup",
+      "https://betrix24-backend.herokuapp.com/signup",
       creds
     );
     dispatch({ type: Auth_SignUp_Success, payload: res.data });

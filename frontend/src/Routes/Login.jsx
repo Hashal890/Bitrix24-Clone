@@ -14,28 +14,33 @@ import {
   Stack,
   Box,
 } from "@chakra-ui/react";
-import styles from "../CSS/Login.module.css";
+import styles from "./Login.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { loginAPI } from "../store/auth/auth.actions";
-import LeftBox from "../Components/LeftBox";
+import LeftBox from "./LeftBox";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
-  const { loading, error, token } = useSelector((store) => store.auth);
+  const { isAuthanticated } = useSelector((store) => store.auth);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const handleLogIn = () => {
+    dispatch(loginAPI({ email: email }));
+    navigate("/dashboard");
+  };
+
   useEffect(() => {
-    if (token !== "") navigate("/dashboard");
+    if (isAuthanticated) {
+      navigate("/dashboard");
+    }
   }, []);
 
   return (
     <Flex gap="60px">
       <LeftBox />
-      {loading && <h1>Loading...</h1>}
-      {error && <h1>Something went wrong...</h1>}
       <Stack>
         <Text className={styles.txhd}>Bitrix24 Login</Text>
         <Divider />
@@ -80,6 +85,7 @@ const Login = () => {
             <AiFillTwitterCircle size="35px" color="#1ea1f2" />
           </Flex>
           <Divider orientation="vertical" />
+
           <Box>
             <MdOutlineQrCodeScanner size="70px" />
             <Text>Log in with QR code</Text>
@@ -88,16 +94,13 @@ const Login = () => {
         <Divider />
         <Flex gap={5}>
           <Button
-            onClick={() => {
-              dispatch(loginAPI({ email: email }));
-              if (token !== "") navigate("/dashboard");
-            }}
+            onClick={handleLogIn}
             borderRadius="20px"
             px="50px"
             bg="#9dcf00"
             color="white"
           >
-            NEXT
+            LOG IN
           </Button>
           <Button variant="unstyled">FORGOT PASSWORD?</Button>
         </Flex>
@@ -105,5 +108,6 @@ const Login = () => {
       </Stack>
     </Flex>
   );
+};
 
 export default Login;

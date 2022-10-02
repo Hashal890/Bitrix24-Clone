@@ -9,10 +9,10 @@ import {
 } from "./auth.types";
 
 const token = localStorage.getItem("token") || "";
-
 const initAuth = {
   loading: false,
   error: false,
+  isRegistered: false,
   isAuthanticated: false,
   token: token,
   message: "",
@@ -31,7 +31,7 @@ const authReducer = (state = initAuth, { type, payload }) => {
         ...state,
         loading: false,
         error: true,
-        message : payload.data
+        message: payload.data,
       };
     }
     case Auth_SignUp_Success: {
@@ -39,6 +39,7 @@ const authReducer = (state = initAuth, { type, payload }) => {
         ...state,
         loading: false,
         error: false,
+        isRegistered: true,
         token: payload.token,
       };
     }
@@ -52,7 +53,7 @@ const authReducer = (state = initAuth, { type, payload }) => {
       return {
         ...state,
         loading: false,
-        error: true
+        error: true,
       };
     }
     case Auth_LogIn_Success: {
