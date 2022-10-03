@@ -1,8 +1,8 @@
-## Betrix24 Clone
+# Betrix24 Clone
 Hello everyone, we are a group of 5 members cloning a website 'https://www.bitrix24.net/' in our construct week at Masai School. Link for deployment => https://betrix24-clone.vercel.app/
 
 
-### Features
+## Features
 
 - Smooth experience on login page.
 - Well designed home page.
@@ -11,7 +11,23 @@ Hello everyone, we are a group of 5 members cloning a website 'https://www.bitri
 - Know about comapany structure.
 
 
-### Tech Stack
+## Screenshots
+
+### 1. Home Page
+![Home Page](./frontend/src/assets/homePage.png)
+### 2. Login Page
+![Login Page](./frontend/src/assets/loginPage.png)
+### 3. Signup Page
+![Signup Page](./frontend/src/assets/signupPage.png)
+### 4. Dashboard Page
+![Dashboard Page](./frontend/src/assets/dashboardPage.png)
+### 5. Task and Projects Page
+![Task and Projects Page](./frontend/src/assets/taskAndProjectsPage.png)
+### 6. Add task Modal
+![Add task Page](./frontend/src/assets/addTaskModal.png)
+
+
+## Tech Stack
 
 In this project we used following tech stacks:- 
 - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
@@ -24,7 +40,7 @@ In this project we used following tech stacks:-
 - [Chakra-UI](https://chakra-ui.com/)
 
 
-### Connect with authors
+## Connect with authors
 
 - [Harshal Pardeshi](https://www.linkedin.com/in/harshalpardeshi/)
 - [Manish Faujdar](https://www.linkedin.com/in/manish-faujdar-b485b2172/)
@@ -33,7 +49,7 @@ In this project we used following tech stacks:-
 - [Rahul Pawar](https://www.linkedin.com/in/rahul-pawar-8138641a7/)
 
 
-### Feedback
+## Feedback
 
 If you have any feedback or queries, please reach out to us at pardeshiharshal90@gmail.com.
 
