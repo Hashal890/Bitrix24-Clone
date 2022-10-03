@@ -18,9 +18,10 @@ In this project we used following tech stacks:-
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
 - [JS](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 - [ReactJS](https://reactjs.org/)
+- [ExpressJS](https://expressjs.com/)
 - [Redux](https://redux.js.org/)
-- [Chakra-UI](https://chakra-ui.com/)
 - [MongoDB](https://www.mongodb.com/)
+- [Chakra-UI](https://chakra-ui.com/)
 
 
 ### Connect with authors
