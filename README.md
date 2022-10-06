@@ -4,10 +4,12 @@ Hello everyone, we are a group of 5 members cloning a website 'https://www.bitri
 
 ## Features
 
-- Smooth experience on login page.
-- Well designed home page.
-- Dashboard with good looking UI.
-- Add and remove task with different functionalities.
+- Smooth experience on the login page.
+- Well-designed home page.
+- Dashboard with good-looking UI.
+- Pagination.
+- Add and remove tasks.
+- Toggle status of task.
 - Know about comapany structure.
 
 
