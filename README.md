@@ -1,5 +1,5 @@
 # Betrix24 Clone
-Hello everyone, we are a group of 5 members created a clone of website 'https://www.bitrix24.net/' in our construct week at Masai School. Link for deployment => https://betrix24-clone.vercel.app/
+Hello everyone, we are a group of 5 members created a clone of 'https://www.bitrix24.net/' in our construct week at Masai School. Link for deployment => https://betrix24-clone.vercel.app/
 
 
 ## Features
