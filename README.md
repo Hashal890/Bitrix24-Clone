@@ -1,5 +1,8 @@
 # Betrix24 Clone
-Hello everyone, we are a group of 5 members created a clone of https://www.bitrix24.net/ in our construct week at Masai School. Link for deployment => https://betrix24-clone.vercel.app/
+- Hello everyone, we are a group of 5 members who created a clone of https://www.bitrix24.net/ in our construct week at Masai School.
+- Bitrix24 is a united workspace that handles many aspects of daily operations and tasks like customer relationship management, project management & collaboration platform for your business management.
+- Link of frontend deployment => https://betrix24-clone.vercel.app/
+- Link of backend deployment => https://betrix24-backend.herokuapp.com/
 
 
 ## Features
