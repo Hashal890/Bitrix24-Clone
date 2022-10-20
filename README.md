@@ -1,8 +1,9 @@
 # Betrix24 Clone
 - Hello everyone, we are a group of 5 members who created a clone of https://www.bitrix24.net/ in our construct week at Masai School.
 - Bitrix24 is a united workspace that handles many aspects of daily operations and tasks like customer relationship management, project management & collaboration platform for your business management.
-- Link of frontend deployment => https://betrix24-clone.vercel.app/
-- Link of backend deployment => https://betrix24-backend.herokuapp.com/
+- Link of frontend deployment (Vercel) => https://betrix24-clone.vercel.app/
+- Link of frontend deployment (Netlify) => https://bitrix24clone.netlify.app/
+- ink of backend deployment (Heroku) => https://betrix24-backend.herokuapp.com/
 
 
 ## Features
@@ -12,8 +13,8 @@
 - Dashboard with good-looking UI.
 - Pagination.
 - Add and remove tasks.
-- Toggle status of task.
-- Know about comapany structure.
+- Toggle the status of the task.
+- Know about company structure.
 
 
 ## Screenshots
