@@ -1,9 +1,10 @@
-# Betrix24 Clone
-- Hello everyone, we are a group of 5 members who created a clone of https://www.bitrix24.net/ in our construct week at Masai School.
+# Bitrix24 Clone
+
+- Hello everyone, we are a group of 5 members who created a clone of [Bitrix24](https://www.bitrix24.net/) in our construct week at Masai School.
 - Bitrix24 is a united workspace that handles many aspects of daily operations and tasks like customer relationship management, project management & collaboration platform for your business management.
-- Link of frontend deployment (Vercel) => https://betrix24-clone.vercel.app/
-- Link of frontend deployment (Netlify) => https://bitrix24clone.netlify.app/
-- ink of backend deployment (Heroku) => https://betrix24-backend.herokuapp.com/
+- Link of frontend deployment ⏩ [Vercel](https://betrix24-clone.vercel.app/)
+- Link of frontend deployment ⏩ [Netlify](https://bitrix24clone.netlify.app/)
+- ink of backend deployment ⏩ [Heroku](https://betrix24-backend.herokuapp.com/)
 
 
 ## Features
@@ -48,11 +49,11 @@ In this project we used following tech stacks:-
 
 ## Connect with authors
 
-- [Harshal Pardeshi](https://www.linkedin.com/in/harshalpardeshi/) => Task and Projects page.
-- [Manish Faujdar](https://www.linkedin.com/in/manish-faujdar-b485b2172/) => Home, Login & Signup pages.
-- [Janaki Kangalgouda](https://www.linkedin.com/in/janaki-kangalgouda-809936169/) => Dashboard Page
-- [Vishal Mahale](https://www.linkedin.com/in/vishal-mahale-87688a192/) => Backend part.
-- [Rahul Pawar](https://www.linkedin.com/in/rahul-pawar-8138641a7/) => Backend part.
+- [Harshal Pardeshi](https://www.linkedin.com/in/harshalpardeshi/) ⏩ Task and Projects page.
+- [Manish Faujdar](https://www.linkedin.com/in/manish-faujdar-b485b2172/) ⏩ Home, Login & Signup pages.
+- [Janaki Kangalgouda](https://www.linkedin.com/in/janaki-kangalgouda-809936169/) ⏩ Dashboard Page
+- [Vishal Mahale](https://www.linkedin.com/in/vishal-mahale-87688a192/) ⏩ Backend part.
+- [Rahul Pawar](https://www.linkedin.com/in/rahul-pawar-8138641a7/) ⏩ Backend part.
 
 
 ## Feedback
