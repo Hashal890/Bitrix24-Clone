@@ -49,7 +49,7 @@ In this project we used following tech stacks:-
 
 ## Connect with authors
 
-- [Harshal Pardeshi](https://www.linkedin.com/in/harshalpardeshi/) ⏩ Task and Projects page.
+- [Harshal Pardeshi](https://www.linkedin.com/in/harshalpardeshi/) (Team Lead) ⏩ Task and Projects page.
 - [Manish Faujdar](https://www.linkedin.com/in/manish-faujdar-b485b2172/) ⏩ Home, Login & Signup pages.
 - [Janaki Kangalgouda](https://www.linkedin.com/in/janaki-kangalgouda-809936169/) ⏩ Dashboard Page
 - [Vishal Mahale](https://www.linkedin.com/in/vishal-mahale-87688a192/) ⏩ Backend part.
