@@ -4,7 +4,7 @@
 - Bitrix24 is a united workspace that handles many aspects of daily operations and tasks like customer relationship management, project management & collaboration platform for your business management.
 - Link of frontend deployment ⏩ [Vercel](https://betrix24-clone.vercel.app/)
 - Link of frontend deployment ⏩ [Netlify](https://bitrix24clone.netlify.app/)
-- ink of backend deployment ⏩ [Heroku](https://betrix24-backend.herokuapp.com/)
+- Link of backend deployment ⏩ [Cyclic](https://bitrix24-backend.cyclic.app/)
 
 
 ## Features
