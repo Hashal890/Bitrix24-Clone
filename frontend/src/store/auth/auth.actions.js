@@ -13,7 +13,7 @@ export const loginAPI = (creds) => async (dispatch) => {
   dispatch({ type: Auth_LogIn_Loading });
   try {
     let res = await axios.post(
-      "https://betrix24-backend.herokuapp.com/login",
+      "https://bitrix24-backend.cyclic.app/login",
       creds
     );
     dispatch({ type: Auth_LogIn_Success, payload: res.data });
@@ -31,7 +31,7 @@ export const signupAPI = (creds) => async (dispatch) => {
   dispatch({ type: Auth_SignUp_Loading });
   try {
     let res = await axios.post(
-      "https://betrix24-backend.herokuapp.com/signup",
+      "https://bitrix24-backend.cyclic.app/signup",
       creds
     );
     dispatch({ type: Auth_SignUp_Success, payload: res.data });
