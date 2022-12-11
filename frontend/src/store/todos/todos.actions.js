@@ -12,7 +12,7 @@ export const getTodosAPI = (page, limit) => async (dispatch) => {
   dispatch({ type: TODOS_LOADING });
   try {
     let getRequestRes = await axios.get(
-      `https://betrix24-backend.herokuapp.com/get?page=${page}&limit=${limit}`
+      `https://bitrix24-backend.cyclic.app/get?page=${page}&limit=${limit}`
     );
     dispatch({ type: GET_TODOS_SUCCESS, payload: getRequestRes.data.response });
   } catch (err) {
@@ -24,7 +24,7 @@ export const updateTodosAPI = (id, data) => async (dispatch) => {
   dispatch({ type: TODOS_LOADING });
   try {
     await axios.patch(
-      `https://betrix24-backend.herokuapp.com/patch/${id}`,
+      `https://bitrix24-backend.cyclic.app/patch/${id}`,
       data
     );
     dispatch({ type: UPDATE_TODOS_SUCCESS });
@@ -36,7 +36,7 @@ export const updateTodosAPI = (id, data) => async (dispatch) => {
 export const postTodosAPI = (newTask) => async (dispatch) => {
   dispatch({ type: TODOS_LOADING });
   try {
-    await axios.post("https://betrix24-backend.herokuapp.com/post", newTask);
+    await axios.post("https://bitrix24-backend.cyclic.app/post", newTask);
     dispatch({ type: ADD_TODOS_SUCCESS });
   } catch (err) {
     dispatch({ type: TODOS_ERROR });
@@ -46,7 +46,7 @@ export const postTodosAPI = (newTask) => async (dispatch) => {
 export const deleteTodosAPI = (id) => async (dispatch) => {
   dispatch({ type: TODOS_LOADING });
   try {
-    await axios.delete(`https://betrix24-backend.herokuapp.com/delete/${id}`);
+    await axios.delete(`https://bitrix24-backend.cyclic.app/delete/${id}`);
     dispatch({ type: DELETE_TODOS_SUCCESS });
   } catch (err) {
     dispatch({ type: TODOS_ERROR });
